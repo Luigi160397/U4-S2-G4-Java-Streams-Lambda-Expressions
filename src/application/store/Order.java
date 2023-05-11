@@ -26,6 +26,15 @@ public class Order {
 		setCustomer(customer);
 	}
 
+	public Order(String status, List<Product> products, Customer customer, LocalDate orderDate) {
+		setId(id);
+		setStatus(status);
+		setOrderDate(orderDate);
+		setDeliveryDate(deliveryDate);
+		setProducts(products);
+		setCustomer(customer);
+	}
+
 	public Random getRandom() {
 		return random;
 	}

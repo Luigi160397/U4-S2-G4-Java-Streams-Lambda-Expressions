@@ -1,5 +1,6 @@
 package application;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class Application {
 
 		Customer c1 = new Customer("Pippo", 2);
 		Customer c2 = new Customer("Marco", 4);
-		Customer c3 = new Customer("Ajeje", 5);
+		Customer c3 = new Customer("Ajeje", 2);
 
 		List<Product> babyListC1 = list.stream()
 				.filter(baby -> baby.getCategory().toString().equals("Baby") && baby.getName().equals("Cappellino")
@@ -69,13 +70,19 @@ public class Application {
 		List<Product> babyListC3 = list.stream()
 				.filter(baby -> baby.getPrice() > 12 && baby.getCategory().toString().equals("Baby")).toList();
 
-		Order o1 = new Order("Spedito", babyListC1, c1);
-		Order o2 = new Order("Ricevuto", babyListC2, c2);
-		Order o3 = new Order("In Elaborazione", babyListC3, c3);
+		LocalDate d1 = LocalDate.of(2021, 2, 1);
+		LocalDate d2 = LocalDate.of(2021, 3, 1);
 
-		System.out.println(o1.toString());
-		System.out.println(o2.toString());
-		System.out.println(o3.toString());
+		Order o1 = new Order("Spedito", babyListC1, c1, d1);
+		Order o2 = new Order("Ricevuto", babyListC2, c2);
+		Order o3 = new Order("In Elaborazione", babyListC3, c3, d2);
+
+		List<Order> orders = new ArrayList<>();
+		orders.add(o1);
+		orders.add(o2);
+		orders.add(o3);
+
+		System.out.println(orders);
 
 		// ************* Esercizio 3 ***************
 
@@ -100,6 +107,15 @@ public class Application {
 
 		System.out.println(boysList);
 
+		// ************* Esercizio 4 ***************
+
+		List<List<Product>> febAprList = orders.stream()
+				.filter(order -> order.getOrderDate().isAfter(LocalDate.of(2021, 1, 31))
+						&& order.getOrderDate().isBefore(LocalDate.of(2021, 5, 1))
+						&& order.getCustomer().getTier() == 2)
+				.map(order -> order.getProducts()).toList();
+
+		System.out.println(febAprList);
 	}
 
 }
