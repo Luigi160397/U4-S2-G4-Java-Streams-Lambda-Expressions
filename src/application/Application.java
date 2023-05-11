@@ -79,6 +79,27 @@ public class Application {
 
 		// ************* Esercizio 3 ***************
 
+		Product p7 = new Product("Orologio", "Boys", 199.99);
+		Product p8 = new Product("Jeans", "Boys", 30.50);
+		Product p9 = new Product("Bracciale", "Boys", 11.30);
+		Product p10 = new Product("Boxer", "Boys", 20.60);
+		Product p11 = new Product("Calzini", "Boys", 3.50);
+		Product p12 = new Product("Collana", "Boys", 70);
+
+		list.add(p7);
+		list.add(p8);
+		list.add(p9);
+		list.add(p10);
+		list.add(p11);
+		list.add(p12);
+
+		List<Product> boysList = list.stream().filter(boy -> boy.getCategory().toString().equals("Boys")).map(boy -> {
+			boy.setPrice(boy.getPrice() - ((Math.round(boy.getPrice() * 10) / 100)));
+			return boy;
+		}).toList();
+
+		System.out.println(boysList);
+
 	}
 
 }
