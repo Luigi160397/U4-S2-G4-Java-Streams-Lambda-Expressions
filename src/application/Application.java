@@ -33,7 +33,7 @@ public class Application {
 
 		if (bookListMaggiore100.size() > 0) {
 
-			System.out.println(bookListMaggiore100);
+			System.out.println("ESERCIZIO 1: " + bookListMaggiore100);
 		} else {
 			System.out.println("Non ci sono Books che costano più di 100€");
 		}
@@ -82,7 +82,7 @@ public class Application {
 		orders.add(o2);
 		orders.add(o3);
 
-		System.out.println(orders);
+		System.out.println("ESERCIZIO 2: " + orders);
 
 		// ************* Esercizio 3 ***************
 
@@ -105,7 +105,7 @@ public class Application {
 			return boy;
 		}).toList();
 
-		System.out.println(boysList);
+		System.out.println("ESERCIZIO 3: " + boysList);
 
 		// ************* Esercizio 4 ***************
 
@@ -115,7 +115,7 @@ public class Application {
 						&& order.getCustomer().getTier() == 2)
 				.map(order -> order.getProducts()).toList();
 
-		System.out.println(febAprList);
+		System.out.println("ESERCIZIO 4: " + febAprList);
 	}
 
 }
