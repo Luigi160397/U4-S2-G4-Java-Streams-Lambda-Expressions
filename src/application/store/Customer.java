@@ -49,7 +49,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "IDcostumer: " + getId() + " Name: " + getName() + " Tier: " + getTier();
+		return "IDcostumer: " + getId() + " Name: " + getName() + " Tier: " + getTier() + System.lineSeparator();
 	}
 
 }

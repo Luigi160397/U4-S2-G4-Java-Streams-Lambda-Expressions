@@ -94,6 +94,7 @@ public class Order {
 	@Override
 	public String toString() {
 		return "IDorder: " + getId() + " Status: " + getStatus() + " Order Date: " + getOrderDate() + " Delivery Date: "
-				+ getDeliveryDate() + " Products: " + getProducts() + " Customer: " + getCustomer();
+				+ getDeliveryDate() + " Products: " + getProducts() + " Customer: " + getCustomer()
+				+ System.lineSeparator();
 	}
 }

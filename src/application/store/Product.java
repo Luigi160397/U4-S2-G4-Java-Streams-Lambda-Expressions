@@ -52,8 +52,8 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "IDproduct: " + getId() + " Name: " + getName() + " Price: " + getPrice() + " Category: "
-				+ getCategory();
+		return "IDproduct: " + getId() + " Name: " + getName() + " Price: " + getPrice() + " Category: " + getCategory()
+				+ System.lineSeparator();
 	}
 
 }
